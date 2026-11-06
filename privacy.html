@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プライバシーポリシー — HopScreen</title>
+  <meta name="description" content="HopScreen のプライバシーポリシー">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="ja" href="privacy.html">
+  <link rel="alternate" hreflang="en" href="en/privacy.html">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="./">Hop<span>Screen</span></a>
+      <nav>
+        <a href="./">トップ</a>
+        <a href="support.html">サポート</a>
+        <a href="privacy.html" aria-current="page">プライバシー</a>
+        <a href="en/privacy.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新日: 2026年11月6日</p>
+
+    <p>HopScreen(以下「本アプリ」)は、スマホ(iPhone・Android)の画面を、同じネットワークにあるPC(Mac・Windows)に映すアプリです。本アプリは Hidechika Doi(個人)が提供しています。このページでは、本アプリ(スマホのアプリと、PCの受信アプリ)が扱う情報について説明します。</p>
+
+    <div class="card">
+      <h3>要点</h3>
+      <ul>
+        <li>本アプリは、提供者のサーバーに情報を送りません。アカウントの登録、広告、アクセス解析もありません。</li>
+        <li>スマホの画面は、あなたがQRを読んだPCにだけ、同じネットワークの中で暗号化して直接送ります。</li>
+        <li>映した画面は、スマホにもPCにも保存しません。</li>
+      </ul>
+    </div>
+
+    <h2>扱う情報と使い道</h2>
+
+    <h3>画面の映像</h3>
+    <p>「スタート」を押して画面の共有を許可すると、スマホの画面全体(配信中に届いた通知も含みます)を取り込んで圧縮し、QRで選んだPCへ送ります。インターネット上のサーバーは通りません。通信は TLS で暗号化し、つないだ相手がQRを表示したPCであることを、証明書の指紋で確かめます。映像は保存しません。</p>
+
+    <h3>スマホからPCへ送る端末の情報</h3>
+    <p>接続するとき、スマホは次の情報をPCへ送ります。PCは、接続の確認画面と、許可した端末の一覧に使います。</p>
+    <ul>
+      <li>端末の名前、機種、OSのバージョン</li>
+      <li>端末を見分けるID(iPhone はこのアプリ用のID〔identifierForVendor〕、Android は ANDROID_ID)</li>
+      <li>端末の鍵(本アプリが作る乱数。そのPCで許可された端末であることを示すために使います)</li>
+    </ul>
+
+    <h3>PCに保存する情報</h3>
+    <ul>
+      <li>許可した端末の一覧: 端末の名前、機種、端末を見分けるID、端末の鍵のハッシュ値(鍵そのものは保存しません)、許可した日時、最後に映した日時。PCの受信アプリの「登録済みの端末」から削除できます。</li>
+      <li>通信の計測値: 映像の遅れや送信量などの数値を、端末の名前と一緒に、PCの中のファイルに記録します(Mac では <code>~/Library/Logs/HopScreen</code>)。映像そのものは含みません。</li>
+      <li>通信を暗号化するための、PCの証明書と鍵。</li>
+    </ul>
+
+    <h3>スマホに保存する情報</h3>
+    <p>最後に読んだPCの接続先(アドレス、ポート、PCの名前、証明書の指紋、使い捨ての合言葉)と、PCごとの端末の鍵を保存します。iPhone ではキーチェーンに、Android ではアプリのデータに保存します。</p>
+
+    <h3>カメラ</h3>
+    <p>カメラは、アプリの中でPCのQRを読むときだけ使います。本アプリはカメラの画像を保存も送信もしません。</p>
+    <ul>
+      <li>iPhone: Apple の VisionKit を使い、読み取りは端末の中で行われます。</li>
+      <li>Android: Google Play 開発者サービスの「コードスキャナ」(Google ML Kit)を使います。読み取りは端末の中で行われ、本アプリには読み取った結果だけが渡されます。Google によると、画像や読み取り結果は Google に保存されません。ただしこの部品は、機能の診断と利用状況の分析のため、端末の機種・OSのバージョン、アプリの名前とバージョン、処理時間などの情報を、暗号化して Google に送ります(<a href="https://developers.google.com/ml-kit/android-data-disclosure">Google の説明</a>)。</li>
+    </ul>
+
+    <h3>ローカルネットワーク</h3>
+    <p>同じネットワークにあるPCとつなぐために使います。iPhone では「ローカルネットワーク」の許可を求めます。</p>
+
+    <h3>通知(Android)</h3>
+    <p>配信中であることと、停止のボタンを、通知で表示します。</p>
+
+    <h2>第三者への提供</h2>
+    <p>本アプリは、上に書いた Google の部品(Android のQRの読み取り)を除き、第三者に情報を送りません。情報を販売することもありません。</p>
+
+    <h2>情報の削除</h2>
+    <ul>
+      <li>スマホ: アプリを削除すると、アプリのデータは消えます。ただし iPhone では、キーチェーンに保存した接続先と端末の鍵が、アプリを削除したあとも残ることがあります。</li>
+      <li>PC: 受信アプリの「登録済みの端末」から、端末を削除できます。計測値は、上のファイルを削除すると消えます。</li>
+    </ul>
+
+    <h2>このサイトについて</h2>
+    <p>このサイトは、クッキーやアクセス解析を使いません。GitHub Pages で公開しているため、アクセスの記録は GitHub が扱います(<a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHub のプライバシーに関する声明</a>)。</p>
+
+    <h2>このポリシーの変更</h2>
+    <p>本アプリで扱う情報が変わるときは、このページを更新し、最終更新日を改めます。</p>
+
+    <h2>お問い合わせ</h2>
+    <p>このポリシーや本アプリについてのお問い合わせは、<a href="mailto:yuh.products@gmail.com">yuh.products@gmail.com</a> までお送りください。</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Hidechika Doi</span>
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+  </footer>
+</body>
+</html>
